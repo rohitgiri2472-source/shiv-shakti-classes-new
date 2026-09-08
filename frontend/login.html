@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Login | Shiv Shakti Classes</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="auth-page">
+    <a class="back-home" href="index.html">← Back to website</a>
+    <div class="auth-layout">
+      <div class="auth-brand-panel">
+        <div class="brand large-brand">
+          <span class="brand-mark">ॐ</span
+          ><span><strong>Shiv Shakti</strong><small>Classes</small></span>
+        </div>
+        <h1>Learn. Practice. Improve.</h1>
+        <p>
+          Your student dashboard gives quick access to lectures, study
+          materials, tests and announcements.
+        </p>
+        <div class="auth-features">
+          <span>🎥 Online & Recorded Lectures</span
+          ><span>📢 Class Announcements</span
+          ><span>🔔 Important Notifications</span
+          ><span>📝 Tests & Results</span>
+        </div>
+      </div>
+      <div class="login-card">
+        <span class="eyebrow">Student Portal</span>
+        <h2>Welcome Back!</h2>
+        <p>Login to continue learning.</p>
+        <form id="loginForm">
+          <label>Email or Mobile Number</label
+          ><input
+            id="loginId"
+            type="text"
+            placeholder="Enter email or mobile"
+            required
+          />
+          <label>Password</label>
+          <div class="password-wrap">
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter password"
+              required
+            /><button type="button" id="togglePassword">Show</button>
+          </div>
+          <div class="form-row">
+            <label class="remember"
+              ><input type="checkbox" id="remember" /> Remember me</label
+            ><a href="#" id="forgotPassword">Forgot Password?</a>
+          </div>
+          <button class="btn btn-primary full" type="submit">Login</button>
+          <p id="loginMessage" class="form-message"></p>
+        </form>
+        <div class="demo-box">
+          <strong>For testing</strong>
+          <p>
+            Create a student from Register, or use your own backend account.
+          </p>
+        </div>
+        <p class="auth-bottom">
+          New student? <a href="register.html">Create an account</a>
+        </p>
+      </div>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

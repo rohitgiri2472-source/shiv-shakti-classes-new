@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Shiv Shakti Classes</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="auth-page">
+    <a class="back-home dark-back" href="index.html">← Back to website</a>
+    <div class="auth-simple">
+      <div class="login-card register-card">
+        <a class="brand auth-card-brand" href="index.html"
+          ><span class="brand-mark">ॐ</span
+          ><span><strong>Shiv Shakti</strong><small>Classes</small></span></a
+        >
+        <span class="eyebrow">Student Registration</span>
+        <h2>Create Account</h2>
+        <p>Register to access your class dashboard.</p>
+        <form id="registerForm">
+          <label>Full Name</label
+          ><input
+            id="name"
+            type="text"
+            placeholder="Enter full name"
+            required
+          />
+          <label>Email</label
+          ><input id="email" type="email" placeholder="Enter email" required />
+          <label>Mobile Number</label
+          ><input
+            id="phone"
+            type="tel"
+            placeholder="10-digit mobile number"
+            required
+          />
+          <label>Select Class</label
+          ><select id="className" required>
+            <option value="">Choose class</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+          <label>Password</label
+          ><input
+            id="password"
+            type="password"
+            placeholder="Minimum 6 characters"
+            minlength="6"
+            required
+          />
+          <button class="btn btn-primary full" type="submit">
+            Create Account
+          </button>
+          <p id="registerMessage" class="form-message"></p>
+        </form>
+        <p class="auth-bottom">
+          Already registered? <a href="login.html">Login here</a>
+        </p>
+      </div>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/register.js"></script>
+  </body>
+</html>

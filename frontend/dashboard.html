@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard | Shiv Shakti Classes</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dashboard-page">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand sidebar-brand" href="index.html"
+        ><span class="brand-mark">ॐ</span
+        ><span><strong>Shiv Shakti</strong><small>Classes</small></span></a
+      >
+      <nav>
+        <a class="side-link active" href="#overview"
+          >🏠 <span>Dashboard</span></a
+        ><a class="side-link" href="#lectures">🎥 <span>My Lectures</span></a
+        ><a class="side-link" href="#materials"
+          >📚 <span>Study Material</span></a
+        ><a class="side-link" href="#tests">📝 <span>Tests & Results</span></a
+        ><a class="side-link" href="#announcements"
+          >📢 <span>Announcements</span></a
+        ><a class="side-link" href="#notifications"
+          >🔔 <span>Notifications</span></a
+        ><a class="side-link" href="#profile">👤 <span>My Profile</span></a>
+      </nav>
+      <button class="logout-btn" id="logoutBtn">↪ Logout</button>
+    </aside>
+    <div class="dashboard-main">
+      <header class="dashboard-header">
+        <button class="menu-btn" id="dashboardMenu">☰</button>
+        <div>
+          <span class="eyebrow">Student Dashboard</span>
+          <h1 id="welcomeText">Welcome back!</h1>
+        </div>
+        <div class="student-mini">
+          <div class="mini-avatar">S</div>
+          <div>
+            <strong id="studentName">Student</strong
+            ><small id="studentClass">Class</small>
+          </div>
+        </div>
+      </header>
+      <main class="dashboard-content" id="overview">
+        <section class="stats-grid">
+          <div class="stat-card">
+            <span>🎥</span>
+            <div>
+              <strong id="lectureCount">0</strong><small>Total Lectures</small>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span>📚</span>
+            <div><strong>—</strong><small>Study Materials</small></div>
+          </div>
+          <div class="stat-card">
+            <span>📝</span>
+            <div><strong>—</strong><small>Tests Completed</small></div>
+          </div>
+          <div class="stat-card">
+            <span>📈</span>
+            <div><strong>—</strong><small>Average Score</small></div>
+          </div>
+        </section>
+        <section class="dashboard-grid">
+          <div class="panel large-panel" id="lectures">
+            <div class="panel-title">
+              <div>
+                <span class="eyebrow">Continue Learning</span>
+                <h2>My Lectures</h2>
+              </div>
+            </div>
+            <div id="lectureList" class="lecture-list">
+              <p class="loading">Loading lectures...</p>
+            </div>
+          </div>
+          <div class="panel" id="notifications">
+            <div class="panel-title">
+              <div>
+                <span class="eyebrow">Stay Updated</span>
+                <h2>Notifications</h2>
+              </div>
+              <span class="notification-count" id="notificationCount">0</span>
+            </div>
+            <div id="notificationList"></div>
+          </div>
+        </section>
+        <section class="dashboard-grid">
+          <div class="panel" id="announcements">
+            <div class="panel-title">
+              <div>
+                <span class="eyebrow">Latest News</span>
+                <h2>Announcements</h2>
+              </div>
+            </div>
+            <div id="dashboardAnnouncements">
+              <p class="loading">Loading...</p>
+            </div>
+          </div>
+          <div class="panel" id="materials">
+            <div class="panel-title">
+              <div>
+                <span class="eyebrow">Resources</span>
+                <h2>Study Material</h2>
+              </div>
+            </div>
+            <div class="resource-list">
+              <p class="muted">
+                Study-material API is ready. Add your material records from the
+                backend/admin side.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="panel" id="tests">
+          <div class="panel-title">
+            <div>
+              <span class="eyebrow">Performance</span>
+              <h2>Recent Test Results</h2>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Test</th>
+                  <th>Subject</th>
+                  <th>Date</th>
+                  <th>Score</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="5" class="muted">
+                    Test module can be connected to the same backend.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="panel profile-panel" id="profile">
+          <span class="eyebrow">Account</span>
+          <h2>My Profile</h2>
+          <div class="profile-details">
+            <p><strong>Name</strong><span id="profileName">—</span></p>
+            <p><strong>Email</strong><span id="profileEmail">—</span></p>
+            <p><strong>Mobile</strong><span id="profilePhone">—</span></p>
+            <p><strong>Class</strong><span id="profileClass">—</span></p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

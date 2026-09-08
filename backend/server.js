@@ -1,0 +1,41 @@
+const dns = require("dns");
+
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const connectDB = require("./config/db");
+
+const authRoutes = require("./routes/authRoutes");
+const lectureRoutes = require("./routes/lectureRoutes");
+const announcementRoutes = require("./routes/announcementRoutes");
+const notificationRoutes = require("./routes/notificationRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
+const studentRoutes = require("./routes/studentRoutes");
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+connectDB();
+
+app.use(cors({
+  origin: process.env.FRONTEND_URL ? process.env.FRONTEND_URL.split(",").map(x => x.trim()) : "*"
+}));
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.json({ message: "Shiv Shakti Classes API is running." });
+});
+
+app.use("/api/auth", authRoutes);
+app.use("/api/lectures", lectureRoutes);
+app.use("/api/announcements", announcementRoutes);
+app.use("/api/notifications", notificationRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/students", studentRoutes);
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(err.status || 500).json({ message: err.message || "Server error." });
+});
+
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

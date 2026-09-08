@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shiv Shakti Classes | Classes 1–10</title>
+  <meta name="description" content="Shiv Shakti Classes - online coaching for Classes 1 to 10.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="topbar"><div>🎓 Learn Today &nbsp; | &nbsp; Build Tomorrow</div><div>📞 +91 8235051308 &nbsp;&nbsp; ✉ support@shivshakticlasses.in</div></div>
+
+  <header class="navbar">
+    <a class="brand" href="index.html"><span class="brand-mark">ॐ</span><span><strong>Shiv Shakti</strong><small>Classes</small></span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <nav id="navMenu">
+      <a class="active" href="#home">Home</a><a href="#about">About Us</a><a href="#courses">Courses</a>
+      <a href="#faculty">Faculty</a><a href="#announcements">Announcements</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions"><a class="btn btn-outline" href="login.html">Login</a><a class="btn btn-primary" href="register.html">Register</a></div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow hero-badge">Best Online Coaching for Classes 1 to 10</span>
+        <h1>Shiv Shakti Classes</h1><h2>Strong Basics <span>|</span> Bright Future</h2>
+        <p>Quality online education for Classes 1 to 10 with expert teachers, interactive lessons, study material and regular tests.</p>
+        <div class="hero-points"><span>✓ Expert Teachers</span><span>✓ Live Classes</span><span>✓ Study Material</span><span>✓ Regular Tests</span></div>
+        <a class="btn btn-primary hero-btn" href="#courses">Start Learning Today →</a>
+      </div>
+    
+      <div class="hero-visual">
+    <div class="hero-slider">
+
+        <div class="hero-slide active">
+            <img src="assets/img1.jpeg" alt="Students learning online">
+        </div>
+
+        <div class="hero-slide">
+            <img src="assets/faculty.jpg" alt="Online classes">
+        </div>
+
+        <div class="hero-slide">
+            <img src="assets/img2.jpeg" alt="Shiv Shakti Classes">
+        </div>
+
+        <!-- Arrows -->
+        <button class="slider-btn prev" id="prevSlide">❮</button>
+        <button class="slider-btn next" id="nextSlide">❯</button>
+
+        <!-- Dots -->
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+
+    </div>
+</div>
+    </section>
+
+    <section class="features section">
+      <div class="feature"><div class="icon">📚</div><h3>Complete Syllabus</h3><p>All major subjects covered for Classes 1–10.</p></div>
+      <div class="feature"><div class="icon">▶</div><h3>Live & Recorded</h3><p>Attend live classes or watch recorded lectures.</p></div>
+      <div class="feature"><div class="icon">👨‍🏫</div><h3>Expert Faculty</h3><p>Learn from skilled and passionate teachers.</p></div>
+      <div class="feature"><div class="icon">📊</div><h3>Progress Tracking</h3><p>Regular tests help students track improvement.</p></div>
+    </section>
+
+    <section class="section" id="courses">
+      <div class="section-heading"><span class="eyebrow">Choose Your Class</span><h2>Our Courses</h2><p>Choose your class and start your learning journey.</p></div>
+      <div class="class-grid" id="classGrid"></div>
+    </section>
+
+    <section class="section two-column" id="about">
+      <div><span class="eyebrow">Why Shiv Shakti?</span><h2>Learning made simple, structured and student-friendly.</h2>
+        <p>Students get one place for lectures, notes, tests, announcements and important notifications.</p>
+        <ul class="check-list"><li>Concept-based teaching</li><li>Regular doubt sessions</li><li>Personal attention</li><li>Affordable learning</li><li>Secure student dashboard</li></ul>
+      </div>
+      <div class="info-card"><h3>Student Dashboard</h3><p>After login, students can access:</p>
+        <div class="dashboard-preview"><span>🎥 Online Lectures</span><span>📢 Announcements</span><span>🔔 Notifications</span><span>📄 Study Materials</span><span>📝 Tests & Results</span><span>👤 Profile</span></div>
+        <a class="btn btn-primary" href="login.html">Student Login →</a>
+      </div>
+    </section>
+
+    <section class="section" id="faculty"><div class="section-heading"><span class="eyebrow">Our Teachers</span><h2>Learn From Experienced Faculty</h2></div>
+      <div class="faculty-grid"><article class="teacher-card"><div class="teacher-avatar">👨‍🏫</div><h3>Raushan Kumar</h3><p>Mathematics • Classes 6–10</p></article>
+      <article class="teacher-card"><div class="teacher-avatar">👩‍🏫</div><h3>Muskan Singh</h3><p>Science • Classes 6–10</p></article>
+      <article class="teacher-card"><div class="teacher-avatar">👨‍🏫</div><h3>Shivam Singh</h3><p>English • Classes 1–10</p></article></div>
+    </section>
+
+    <section class="section announcements" id="announcements"><div class="section-heading"><span class="eyebrow">Stay Updated</span><h2>Latest Announcements</h2></div><div id="announcementList" class="announcement-list"></div></section>
+
+    <section class="section contact" id="contact"><div><span class="eyebrow">Get In Touch</span><h2>Ready to start learning?</h2><p>Contact Shiv Shakti Classes for admission, course details and demo classes.</p></div>
+      <div class="contact-box"><p>📞 <strong>+91 8235051308</strong></p><p>✉ <strong>support@shivshakticlasses.in</strong></p><a class="btn btn-primary" href="register.html">Join Now</a></div>
+    </section>
+  </main>
+  <footer><div class="footer-brand"><span class="brand-mark">ॐ</span><strong>Shiv Shakti Classes</strong></div><p>© 2026 Shiv Shakti Classes. All rights reserved.</p>
+    <div class="social-links">
+
+    <a href="https://www.facebook.com/YOUR_PAGE" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14 8h3V4h-3c-3.31 0-5 1.69-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-.55.45-1 1-1z"/>
+        </svg>
+    </a>
+
+    <a href="" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.6 15.8V8.2l6.4 3.8-6.4 3.8z"/>
+        </svg>
+    </a>
+
+    <a href="https://www.instagram.com/shiv_shakticoachingclasses?stkn=MTZwYnBxaGg3ajc1Yg==" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zM17.5 6.5a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/>
+        </svg>
+      </a> 
+
+</div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/slider.js"></script>
+</body>
+</html>

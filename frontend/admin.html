@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Admin | Shiv Shakti Classes</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="auth-page">
+    <div class="auth-simple">
+      <main class="login-card register-card">
+        <a class="brand auth-card-brand" href="index.html"
+          ><span class="brand-mark">ॐ</span
+          ><span><strong>Shiv Shakti</strong><small>Admin</small></span></a
+        >
+        <span class="eyebrow">Admin Panel</span>
+        <h2>Manage Learning Content</h2>
+        <p>Add lectures, announcements and notifications.</p>
+        <h3>Add Lecture</h3>
+        <form id="lectureForm">
+          <label>Lecture Title</label><input id="lectureTitle" required /><label
+            >Subject</label
+          ><input id="lectureSubject" required /><label>Class</label
+          ><select id="lectureClass" required>
+            <option value="">Select class</option>
+            <script>
+              for (let i = 1; i <= 10; i++)
+                document.write(`<option>${i}</option>`);
+            </script>
+          </select>
+          <label>Teacher</label><input id="lectureTeacher" />
+          <label>Video URL</label
+          ><input
+            id="lectureUrl"
+            type="url"
+            placeholder="https://..."
+            required
+          /><label>Duration</label
+          ><input id="lectureDuration" placeholder="40 min" /><button
+            class="btn btn-primary full"
+          >
+            Add Lecture
+          </button>
+          <p id="adminMessage" class="form-message"></p>
+        </form>
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e3e9f2" />
+        <h3>Add Announcement</h3>
+        <form id="announcementForm">
+          <label>Title</label><input id="announcementTitle" required /><label
+            >Message</label
+          ><input id="announcementMessage" required /><label
+            >Class (optional)</label
+          ><select id="announcementClass">
+            <option value="">All classes</option>
+            <script>
+              for (let i = 1; i <= 10; i++)
+                document.write(`<option>${i}</option>`);
+            </script></select
+          ><label class="remember"
+            ><input id="announcementPublic" type="checkbox" checked /> Show on
+            public homepage</label
+          ><button class="btn btn-primary full">Publish Announcement</button>
+          <p id="announcementMessageBox" class="form-message"></p>
+        </form>
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e3e9f2" />
+        <h3>Send Notification</h3>
+        <form id="notificationForm">
+          <label>Title</label><input id="notificationTitle" required /><label
+            >Message</label
+          ><input id="notificationText" required /><label
+            >Class (optional)</label
+          ><select id="notificationClass">
+            <option value="">All classes</option>
+            <script>
+              for (let i = 1; i <= 10; i++)
+                document.write(`<option>${i}</option>`);
+            </script></select
+          ><button class="btn btn-primary full">Send Notification</button>
+          <p id="notificationMessageBox" class="form-message"></p>
+        </form>
+
+        <section class="admin-section" id="studentsSection">
+
+    <div class="admin-section-header">
+
+        <div>
+            <span class="eyebrow">
+                Student Management
+            </span>
+
+            <h2>Students</h2>
+
+            <p class="muted">
+                Manage students and their basic information.
+            </p>
+        </div>
+
+
+        <button
+            class="btn btn-primary"
+            id="addStudentBtn"
+            type="button"
+        >
+            + Add Student
+        </button>
+
+    </div>
+
+
+    <!-- SEARCH / FILTER -->
+
+    <div class="student-controls">
+
+        <input
+            type="search"
+            id="studentSearch"
+            placeholder="Search by name, email or phone..."
+        />
+
+
+        <select id="studentClassFilter">
+
+            <option value="">
+                All Classes
+            </option>
+
+            <option value="1">Class 1</option>
+            <option value="2">Class 2</option>
+            <option value="3">Class 3</option>
+            <option value="4">Class 4</option>
+            <option value="5">Class 5</option>
+            <option value="6">Class 6</option>
+            <option value="7">Class 7</option>
+            <option value="8">Class 8</option>
+            <option value="9">Class 9</option>
+            <option value="10">Class 10</option>
+
+        </select>
+
+    </div>
+
+
+    <!-- STUDENT TABLE -->
+
+    <div class="table-wrap student-table-wrap">
+
+        <table class="student-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>#</th>
+
+                    <th>Student</th>
+
+                    <th>Email</th>
+
+                    <th>Mobile</th>
+
+                    <th>Class</th>
+
+                    <th>Added By</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="studentTableBody">
+
+                <tr>
+
+                    <td
+                        colspan="7"
+                        class="muted"
+                    >
+                        Loading students...
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<div
+    class="student-modal"
+    id="studentModal"
+>
+
+    <div class="student-modal-content">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    Student Management
+                </span>
+
+                <h2 id="studentModalTitle">
+                    Add Student
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeStudentModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="studentForm">
+
+
+            <input
+                type="hidden"
+                id="studentId"
+            />
+
+
+            <input
+                type="hidden"
+                id="studentSource"
+            />
+
+
+            <div class="form-grid">
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="studentNameInput">
+                        Full Name
+                    </label>
+
+                    <input
+                        id="studentNameInput"
+                        type="text"
+                        placeholder="Enter student name"
+                        required
+                    />
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="studentEmailInput">
+                        Email
+                    </label>
+
+                    <input
+                        id="studentEmailInput"
+                        type="email"
+                        placeholder="student@example.com"
+                    />
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="form-group">
+
+                    <label for="studentPhoneInput">
+                        Mobile Number
+                    </label>
+
+                    <input
+                        id="studentPhoneInput"
+                        type="tel"
+                        placeholder="10-digit mobile number"
+                    />
+
+                </div>
+
+
+                <!-- CLASS -->
+
+                <div class="form-group">
+
+                    <label for="studentClassInput">
+                        Class
+                    </label>
+
+                    <select
+                        id="studentClassInput"
+                        required
+                    >
+
+                        <option value="">
+                            Select Class
+                        </option>
+
+                        <option value="1">
+                            Class 1
+                        </option>
+
+                        <option value="2">
+                            Class 2
+                        </option>
+
+                        <option value="3">
+                            Class 3
+                        </option>
+
+                        <option value="4">
+                            Class 4
+                        </option>
+
+                        <option value="5">
+                            Class 5
+                        </option>
+
+                        <option value="6">
+                            Class 6
+                        </option>
+
+                        <option value="7">
+                            Class 7
+                        </option>
+
+                        <option value="8">
+                            Class 8
+                        </option>
+
+                        <option value="9">
+                            Class 9
+                        </option>
+
+                        <option value="10">
+                            Class 10
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <p
+                id="studentFormMessage"
+                class="form-message"
+            ></p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="cancelStudentBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="saveStudentBtn"
+                >
+                    Add Student
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+        <button
+          class="btn btn-outline full"
+          id="logoutBtn"
+          style="margin-top: 20px"
+        >
+          Logout
+        </button>
+      </main>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/student.js"></script>npm run dev
+  </body>
+</html>
