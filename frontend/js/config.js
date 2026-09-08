@@ -1,4 +1,4 @@
-const API_URL = "https://shiv-shakti-classes-new.onrender.com";
+const API_URL = "https://shiv-shakti-classes-new.onrender.com/api";
 
 async function apiRequest(endpoint, options = {}) {
     const token = localStorage.getItem("shivToken");
