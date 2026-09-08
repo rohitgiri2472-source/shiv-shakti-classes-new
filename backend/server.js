@@ -19,8 +19,11 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL ? process.env.FRONTEND_URL.split(",").map(x => x.trim()) : "*"
+  origin: "https://shivshakti-classes.netlify.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true
 }));
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
