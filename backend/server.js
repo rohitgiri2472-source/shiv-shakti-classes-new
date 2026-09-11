@@ -21,8 +21,10 @@ connectDB();
 app.use(cors({
   origin: "https://shivshakti-classes.netlify.app",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
+
 
 app.use(express.json());
 
