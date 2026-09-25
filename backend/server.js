@@ -22,21 +22,12 @@ const allowedOrigins = [
   "https://shivshakti-classes.netlify.app",
   "http://127.0.0.1:5501",
   "http://localhost:5501",
-  "http://127.0.0.1:5000",
-  "http://localhost:5000",
+  "http://127.0.0.1:5500",
+  "http://localhost:5500",
 ];
 
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin) {
-      return callback(null, true);
-    }
-
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    }
-    return callback(new Error("Not allowed by CORS"));
-  },
+  origin: allowedOrigins,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
@@ -52,6 +43,8 @@ app.get("/", (req, res) => {
 });
 
 
+
+
 app.use("/api/auth", authRoutes);
 app.use("/api/lectures", lectureRoutes);
 app.use("/api/announcements", announcementRoutes);
@@ -60,9 +53,11 @@ app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/students", studentRoutes);
 app.use((err, req, res, next) => {
   console.error(err);
-  res.status(err.status || 500).json({ message: err.message || "Server error." });
+  res.status(err.status || 500).json({ 
+    message: err.message || "Server error." });
 });
+
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
-})
+});
